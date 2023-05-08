@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { cardList, shuffle } from '../Data/contentList';
 
-export const CardSlice = createSlice({
+export const cardSlice = createSlice({
   name: 'cards',
   initialState: {
     cards: cardList,
@@ -57,6 +57,6 @@ export const CardSlice = createSlice({
     },
   },
 });
-export const { select, compare, close, reload, closeAll } = CardSlice.actions;
+export const { select, compare, close, reload, closeAll } = cardSlice.actions;
 
-export default CardSlice.reducer;
+export default cardSlice.reducer;

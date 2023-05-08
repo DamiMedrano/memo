@@ -6,7 +6,7 @@ import PrimaryLinkButton from '../Components/Buttons/PrimaryLinkButton';
 import LoginModal from '../Components/LoginModal/LoginModal';
 import ResultModal from '../Components/ResultModal/ResultModal';
 import { useEffect } from 'react';
-import { close, closeAll, compare, reload, select } from '../redux/CardSlice';
+import { close, closeAll, compare, reload, select } from '../redux/cardSlice';
 import {
   Container,
   Header,
@@ -47,6 +47,7 @@ const Game = () => {
       }, 1000);
     }
   };
+
   const reloadGame = () => {
     dispatch(closeAll());
     setIsOpen(false);
@@ -61,6 +62,7 @@ const Game = () => {
       setIsFinish(true);
     }
   }, [found]);
+
   return (
     <>
       <Header>

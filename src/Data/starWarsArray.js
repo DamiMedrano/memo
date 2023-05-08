@@ -1,6 +1,6 @@
 // https://avatars.alphacoders.com/searches/view?search=star+wars
 
-const starWarsArr = [
+const starWarsArray = [
   'https://avatarfiles.alphacoders.com/147/thumb-147614.jpg', // Trooper 1
   'https://avatarfiles.alphacoders.com/143/thumb-14363.jpg', // R2D2
   'https://avatarfiles.alphacoders.com/441/thumb-4410.jpg', // Boba Fett
@@ -18,4 +18,4 @@ const starWarsArr = [
   'https://avatarfiles.alphacoders.com/184/thumb-184914.jpg', // C3PO
 ];
 
-export default starWarsArr;
+export default starWarsArray;

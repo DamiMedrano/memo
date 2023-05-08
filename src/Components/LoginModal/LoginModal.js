@@ -3,6 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Header, Text, Input, Modal, Overlay } from './LoginModalStyled';
 import PrimaryButton from '../Buttons/PrimaryButton';
+import SecondaryLinkButton from '../Buttons/SecondaryLinkButton';
 
 export default function LoginModal({ open, onClose, setUser }) {
   const [value, setValue] = useState('');
@@ -34,6 +35,7 @@ export default function LoginModal({ open, onClose, setUser }) {
             placeholder='Enter your name...'
           />
           <PrimaryButton onClick={saveUser}>Enter</PrimaryButton>
+          <SecondaryLinkButton screen='/' text='Go Back' />
         </form>
       </Modal>
     </>

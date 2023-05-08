@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PrimaryLinkButton from '../../Components/Buttons/PrimaryLinkButton';
-import SecondaryButton from '../../Components/Buttons/SecondaryButton';
+import SecondaryLinkButton from '../../Components/Buttons/SecondaryLinkButton';
 import DropdownMenu from '../../Components/Dropdowns/DropdownMenu';
 import { changeOption } from '../../redux/dropdownSlice';
 import { Container, PartOne, PartTwo, Title } from './MenuStyled';
@@ -25,7 +25,7 @@ const Menu = () => {
           <PartOne>Memory</PartOne> <PartTwo>Game</PartTwo>
         </Title>
         <PrimaryLinkButton screen='/Game' text='PLAY' />
-        <SecondaryButton screen='/Leaderboard' text='Leaderboard' />
+        <SecondaryLinkButton screen='/Leaderboard' text='Leaderboard' />
         <DropdownMenu
           options={options}
           value={selectedOption}
