@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DropdownContainer, Label, Select } from './DropdownMenuStyled';
+import styled from 'styled-components';
 
 function DropdownMenu(props) {
   const [selectedOption, setSelectedOption] = useState(props.options[0]);
@@ -27,3 +27,22 @@ function DropdownMenu(props) {
 }
 
 export default DropdownMenu;
+
+const Label = styled.div`
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Select = styled.select`
+  margin: 12px 0 0;
+  min-width: 180px;
+  min-height: 40px;
+  border-radius: 4px;
+  padding-left: 8px;
+`;
+
+const DropdownContainer = styled.div`
+  margin: 20px 0 0;
+`;
