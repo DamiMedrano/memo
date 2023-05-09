@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { cardList, shuffle } from '../Data/contentList';
+import { cardListSelector, shuffle } from './dropdownSlice';
+import { changeOption } from './dropdownSlice';
 
 export const cardSlice = createSlice({
   name: 'cards',
   initialState: {
-    cards: cardList,
+    cards: [],
     selected: '',
     selectedId: 0,
     totalSelect: 0,
@@ -50,7 +51,18 @@ export const cardSlice = createSlice({
       state.found = 0;
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(changeOption, (state, action) => {
+      const selectedOption = action.payload;
+      state.cards = cardListSelector({ dropdown: { selectedOption } });
+    });
+  },
 });
+
 export const { select, compare, reload, closeAll } = cardSlice.actions;
 
 export default cardSlice.reducer;
+
+export const changeOptionThunk = (option) => (dispatch) => {
+  dispatch(changeOption(option));
+};
