@@ -6,7 +6,7 @@ import PrimaryLinkButton from '../Components/Buttons/PrimaryLinkButton';
 import LoginModal from '../Components/LoginModal/LoginModal';
 import ResultModal from '../Components/ResultModal/ResultModal';
 import { useEffect } from 'react';
-import { close, closeAll, compare, reload, select } from '../redux/cardSlice';
+import { closeAll, compare, reload, select } from '../redux/cardSlice';
 import {
   Container,
   Header,
@@ -37,8 +37,6 @@ const Game = () => {
   const score = useSelector((state) => state.cardReducer.point);
   const found = useSelector((state) => state.cardReducer.found);
   const handleClick = (name, id) => {
-    console.log(name);
-    console.log(id);
     const b = selected;
     if (isOpen) dispatch(select({ name: name, id }));
     if (b !== '') {
@@ -109,9 +107,10 @@ const Game = () => {
             return (
               <Card key={id}>
                 <QuestionMarkCard
+                  className='test'
                   isOpen={!item.isOpen}
                   onClick={() =>
-                    totalSelect < 2 && isOpen && id !== selectedId
+                    (totalSelect < 2 && isOpen && id !== selectedId) || id === 0 // very weird, check later
                       ? handleClick(item.name, id)
                       : ''
                   }

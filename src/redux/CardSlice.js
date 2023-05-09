@@ -35,12 +35,6 @@ export const cardSlice = createSlice({
       state.selectedId = 0;
       state.totalSelect = 0;
     },
-    close: (state, action) => {
-      state.cards[action.payload].isOpen = false;
-      state.selected = '';
-      state.selectedId = 0;
-      state.point -= state.point > 0 ? 10 : 0;
-    },
     closeAll: (state) => {
       state.cards.map((c) => {
         c.isOpen = false;
@@ -57,6 +51,6 @@ export const cardSlice = createSlice({
     },
   },
 });
-export const { select, compare, close, reload, closeAll } = cardSlice.actions;
+export const { select, compare, reload, closeAll } = cardSlice.actions;
 
 export default cardSlice.reducer;
