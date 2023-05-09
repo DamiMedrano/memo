@@ -1,11 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const PrimaryButton = ({ children }) => {
-  return <Button>{children}</Button>;
+const SecondaryButton = ({ children, screen, text }) => {
+  const ButtonElement = screen ? (
+    <ButtonLink to={screen}>
+      <Button>{text}</Button>
+    </ButtonLink>
+  ) : (
+    <Button>{children}</Button>
+  );
+
+  return ButtonElement;
 };
 
-export default PrimaryButton;
+export default SecondaryButton;
+
+const ButtonLink = styled(Link)`
+  text-decoration: none;
+  width: fit-content;
+`;
 
 const Button = styled.button`
   text-align: center;

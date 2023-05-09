@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaQuestion } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { IoReloadCircleSharp } from 'react-icons/io5';
-import PrimaryLinkButton from '../Components/Buttons/PrimaryLinkButton';
+import PrimaryButton from '../Components/Buttons/PrimaryButton';
 import LoginModal from '../Components/LoginModal/LoginModal';
 import ResultModal from '../Components/ResultModal/ResultModal';
 import { useEffect } from 'react';
@@ -70,7 +70,7 @@ const Game = () => {
           {user.name ? 'Hi ' + user.name + ', l' : 'L'}et's play a{' '}
           <span style={{ color: '#ba68c8' }}>Memory Game</span>
         </div>
-        <PrimaryLinkButton screen='/' text='Go back' />
+        <PrimaryButton screen='/' text='Go back' />
       </Header>
       <LoginModal
         open={isLogged}

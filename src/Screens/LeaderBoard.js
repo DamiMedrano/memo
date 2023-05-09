@@ -6,7 +6,7 @@ import {
   Profile,
   Score,
 } from '../Components/ResultModal/ResultModalStyled';
-import PrimaryLinkButton from '../Components/Buttons/PrimaryLinkButton';
+import PrimaryButton from '../Components/Buttons/PrimaryButton';
 import LoadingScreen from '../Components/Loading/LoadingScreen';
 import styled from 'styled-components';
 
@@ -46,7 +46,7 @@ const ResultModal = () => {
       <Container>
         {isLoaded ? (
           <>
-            <PrimaryLinkButton screen='/' text='GoBack' />
+            <PrimaryButton screen='/' text='GoBack' />
             <LeadershipSection>
               <LeadershipHeader>Leadership</LeadershipHeader>
               <Profile
