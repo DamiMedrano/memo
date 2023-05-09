@@ -40,6 +40,7 @@ export const cardSlice = createSlice({
       state.cards.map((c) => {
         c.isOpen = false;
         c.isFind = false;
+        return null; // for linting purposes;
       });
     },
     reload: (state) => {
