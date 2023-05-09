@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { DropdownContainer, Label, Select } from './DropdownMenuStyled';
 
 function DropdownMenu(props) {
   const [selectedOption, setSelectedOption] = useState(props.options[0]);
@@ -10,18 +11,18 @@ function DropdownMenu(props) {
   }
 
   return (
-    <div>
-      <label>
+    <DropdownContainer>
+      <Label>
         Select an option:
-        <select value={selectedOption} onChange={handleOptionChange}>
+        <Select value={selectedOption} onChange={handleOptionChange}>
           {props.options.map((option) => (
             <option key={option} value={option}>
               {option}
             </option>
           ))}
-        </select>
-      </label>
-    </div>
+        </Select>
+      </Label>
+    </DropdownContainer>
   );
 }
 

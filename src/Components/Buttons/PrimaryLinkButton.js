@@ -19,18 +19,17 @@ const ButtonLink = styled(Link)`
 
 const Button = styled.button`
   text-align: center;
-
-  margin-top: 20px;
-  margin-left: 20px;
+  min-width: 180px;
+  margin: 20px 12px 0;
   padding: 10px 20px;
   font-size: 18px;
-  background-color: #ba68c8;
+  background-color: #e865ff;
   color: white;
   border: none;
-  border-radius: 5px;
-  margin-right: 25px;
+  border-radius: 4px;
   transition: 0.2s all;
   &:hover {
+    background-color: #eb76ff;
     cursor: pointer;
   }
 `;

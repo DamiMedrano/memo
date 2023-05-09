@@ -21,7 +21,7 @@ import {
   Card,
   QuestionMarkCard,
   ImageCard,
-} from './ContentStyled';
+} from './GameStyled';
 
 const Game = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -37,6 +37,8 @@ const Game = () => {
   const score = useSelector((state) => state.cardReducer.point);
   const found = useSelector((state) => state.cardReducer.found);
   const handleClick = (name, id) => {
+    console.log(name);
+    console.log(id);
     const b = selected;
     if (isOpen) dispatch(select({ name: name, id }));
     if (b !== '') {
@@ -66,8 +68,11 @@ const Game = () => {
   return (
     <>
       <Header>
-        {user.name ? 'Hi ' + user.name + ', l' : 'L'}et's play a{' '}
-        <span style={{ color: '#ba68c8' }}>Memory Game</span>
+        <div>
+          {user.name ? 'Hi ' + user.name + ', l' : 'L'}et's play a{' '}
+          <span style={{ color: '#ba68c8' }}>Memory Game</span>
+        </div>
+        <PrimaryLinkButton screen='/' text='Go back' />
       </Header>
       <LoginModal
         open={isLogged}
@@ -95,10 +100,9 @@ const Game = () => {
             points, each wrong takes <Red>10</Red> points.
           </ScoreInfo>
           <Reload onClick={reloadGame}>
-            <IoReloadCircleSharp style={{ fontSize: 20, marginRight: 5 }} />
+            <IoReloadCircleSharp />
             <Span>Reload Game</Span>
           </Reload>
-          <PrimaryLinkButton screen='/' text='GoBack' />
         </ScoreContainer>
         <CardsContainer>
           {list.map((item, id) => {
@@ -114,13 +118,7 @@ const Game = () => {
                 >
                   <FaQuestion />
                 </QuestionMarkCard>
-                <ImageCard
-                  isFind={item.isFind}
-                  isOpen={item.isOpen}
-                  onClick={() =>
-                    !item.isFind && isOpen ? dispatch(close(id)) : ''
-                  }
-                >
+                <ImageCard isFind={item.isFind} isOpen={item.isOpen}>
                   {item.isOpen && (
                     <img
                       className='noSelect'

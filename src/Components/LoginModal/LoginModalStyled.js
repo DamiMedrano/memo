@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 
 export const Header = styled.h3`
-  margin-left: 15px;
+  margin-left: 16px;
   font-size: 25px;
   margin-bottom: 30px;
 `;
 
 export const Text = styled.p`
   margin-left: 20px;
-  padding: 2px;
+  padding: 4px;
   font-size: 18px;
 `;
 
 export const Input = styled.input`
   border: 1px solid rgba(220, 220, 220);
   transition: 0.2s border;
-  border-radius: 2px;
+  border-radius: 4px;
   width: 80%;
   margin-left: 20px;
   font-size: 16px;
@@ -26,7 +26,7 @@ export const Input = styled.input`
     border: 1px solid rgba(220, 220, 220, 0.6);
   }
   &:focus {
-    outline: 2px solid #ba68c8;
+    outline: 4px solid #ba68c8;
   }
 `;
 

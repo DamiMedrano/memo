@@ -3,21 +3,22 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   background-color: rgba(230, 206, 255);
-  padding: 5px 0px 50px;
+  padding: 4px 0px 60px;
   height: fit-content;
   position: absolute;
+  margin-top: 40px;
   bottom: 0;
   @media only screen and (max-height: 1100px) {
     position: relative;
   }
   @media only screen and (max-width: 1100px) {
-    padding: 5px 0px 40px;
+    padding: 4px 0px 40px;
   }
   @media only screen and (max-width: 800px) {
-    padding: 5px 0px 30px;
+    padding: 4px 0px 28px;
   }
   @media only screen and (max-width: 600px) {
-    padding: 5px 0px 20px;
+    padding: 4px 0px 20px;
   }
 `;
 
@@ -40,18 +41,18 @@ export const FooterContainer = styled.div`
   }
   @media only screen and (max-width: 600px) {
     width: 90%;
-    margin-top: 15px;
+    margin-top: 16px;
   }
 `;
 
 export const Text = styled.a`
   display: block;
   font-size: 1.4rem;
-  margin-top: 15px;
+  margin-top: 16px;
   color: rgba(0, 0, 0, 0.4);
   text-decoration: none;
   transition: 0.2s all;
-  padding: 5px;
+  padding: 4px;
   &:hover {
     color: rgba(0, 0, 0, 0.8);
   }
@@ -75,11 +76,11 @@ export const Link = styled.a`
     font-size: 40px;
     background-color: white;
     border-radius: 50%;
-    padding: 5px;
+    padding: 4px;
     margin: 10px;
     color: rgba(0, 0, 0, 0.8);
-    box-shadow: rgba(255, 255, 255, 0.82) 0px 2px 4px 0px,
-      rgba(255, 255, 255, 1) 0px 2px 16px 0px;
+    box-shadow: rgba(255, 255, 255, 0.82) 0px 4px 4px 0px,
+      rgba(255, 255, 255, 1) 0px 4px 16px 0px;
     transition: 0.2s color, 1s box-shadow;
 
     &.github:hover {
@@ -94,7 +95,7 @@ export const Link = styled.a`
 
     @media only screen and (max-width: 1200px) {
       .icon {
-        margin: 5px;
+        margin: 4px;
       }
     }
     @media only screen and (max-width: 900px) {

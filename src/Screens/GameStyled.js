@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 800px;
-  margin: 5px auto 30px;
+  margin: 4px auto 30px;
   background-color: white;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 4px 8px 0px;
+  border-radius: 4px;
   @media only screen and (max-width: 900px) {
     width: 90%;
   }
@@ -15,10 +15,10 @@ export const Header = styled.div`
   box-sizing: border-box;
   padding: 20px 25px;
   font-size: 30px;
-  border-radius: 5px;
+  border-radius: 4px;
   width: 800px;
   background-color: white;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 4px 8px 0px;
   margin: 20px auto 20px auto;
   @media only screen and (max-width: 900px) {
     width: 90%;
@@ -30,15 +30,15 @@ export const CardsContainer = styled.div`
   width: 600px;
   margin: auto;
 
-  padding: 20px 20px 20px 30px;
-  border-radius: 5px;
+  padding: 20px 20px 60px 20px;
+  border-radius: 4px;
   @media only screen and (max-width: 900px) {
     width: 500px;
-    padding: 15px 15px 15px 20px;
+    padding: 16px 16px 16px 20px;
   }
   @media only screen and (max-width: 700px) {
     width: 85%;
-    padding: 10px 10px 10px 15px;
+    padding: 10px 10px 10px 16px;
   }
 `;
 
@@ -53,14 +53,13 @@ export const ImageCard = styled.div`
   height: 100%;
   overflow: hidden;
   align-items: center;
-  cursor: pointer;
   font-size: 28px;
-  transition: 1s all;
+  transition: 0.5s all;
   z-index: ${(props) => (props.isOpen ? '999' : '1')};
   transform: ${(props) => (props.isOpen ? 'rotateY(0)' : 'rotateY(180deg)')};
 
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    rgba(0, 0, 0, 0.06) 0px 1px 4px 0px;
 `;
 
 export const QuestionMarkCard = styled.div`
@@ -77,9 +76,9 @@ export const QuestionMarkCard = styled.div`
   color: rgba(0, 0, 0, 0.6);
   box-shadow: ${(props) =>
     props.isFind
-      ? 'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px'
-      : 'rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px'};
-  transition: 1s all;
+      ? 'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 4px 0px'
+      : 'rgba(0, 0, 0, 0.1) 0px 10px 16px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px'};
+  transition: 0.5s all;
   z-index: ${(props) => (props.isOpen ? '999' : '1')};
   transform: ${(props) =>
     props.isOpen ? 'rotateY(360deg)' : 'rotateY(180deg)'};
@@ -89,7 +88,7 @@ export const Card = styled.div`
   width: 20%;
   height: 90px;
   position: relative;
-  margin: 5px auto;
+  margin: 4px auto;
   display: inline-block;
   &:hover {
     opacity: 0.8;
@@ -111,7 +110,7 @@ export const Score = styled.h3`
 `;
 
 export const ScoreContainer = styled.div`
-  padding: 15px 15px 5px 25px;
+  padding: 16px 16px 4px 25px;
   position: relative;
 `;
 
@@ -121,7 +120,7 @@ export const ScoreInfo = styled.p`
   margin-left: 25px;
   color: rgba(140, 140, 140);
   @media only screen and (max-width: 700px) {
-    margin-left: 5px;
+    margin-left: 4px;
     font-size: 14px;
   }
 `;
@@ -136,22 +135,30 @@ export const Green = styled.span`
 
 export const Reload = styled.button`
   position: absolute;
-  top: 13px;
-  right: 15px;
+  top: 20px;
+  right: 20px;
   background-color: transparent;
   border-color: transparent;
-  border-radius: 5px;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  background-color: #ffeb3b;
-  padding: 2px;
+  background-color: #656565;
+  padding: 4px;
   color: white;
   font-weight: 700;
   transition: 0.2s all;
+  svg {
+    font-size: 24px;
+    margin-right: 4px;
+    transition: transform 0.2s ease-in-out;
+  }
   &:hover {
-    transform: translateY(-2px);
+    svg {
+      transform: rotate(360deg);
+      transition: transform 0.2s ease-in-out;
+    }
     cursor: pointer;
   }
 `;

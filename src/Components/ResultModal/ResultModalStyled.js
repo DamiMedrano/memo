@@ -21,7 +21,7 @@ export const LeadershipHeader = styled.h4`
   margin: 0;
   margin-bottom: 20px;
   padding-left: 0;
-  border-bottom: 2px dashed #ba68c8;
+  border-bottom: 4px dashed #ba68c8;
   @media only screen and (max-width: 700px) {
     font-size: 16px;
   }
@@ -47,12 +47,9 @@ export const Button = styled.button`
   background-color: #ba68c8;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   margin-right: 25px;
   transition: 0.2s all;
-  &:hover {
-    opacity: 0.7;
-  }
   @media only screen and (max-width: 700px) {
     font-size: 16px;
     padding: 8px 16px;
