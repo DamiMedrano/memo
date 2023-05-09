@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaQuestion } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { IoReloadCircleSharp } from 'react-icons/io5';
-import PrimaryButton from '../Components/Buttons/PrimaryButton';
-import LoginModal from '../Components/LoginModal/LoginModal';
-import ResultModal from '../Components/ResultModal/ResultModal';
-import { useEffect } from 'react';
-import { closeAll, compare, reload, select } from '../redux/cardSlice';
+import PrimaryButton from '../../Components/Buttons/PrimaryButton';
+import LoginModal from '../../Components/LoginModal/LoginModal';
+import ResultModal from '../../Components/ResultModal/ResultModal';
+import { closeAll, compare, reload, select } from '../../redux/cardSlice';
 import {
   Container,
   Header,

@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 //screens
 import Menu from '../Screens/Menu/Menu';
-import Game from '../Screens/Game';
+import Game from '../Screens/Game/Game';
 import LeaderBoard from '../Screens/LeaderBoard';
 
 const ScreenManager = () => {
