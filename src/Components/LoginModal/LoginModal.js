@@ -5,7 +5,7 @@ import { Header, Text, Input, Modal, Overlay } from './LoginModalStyled';
 import PrimaryButton from '../Buttons/PrimaryButton';
 import SecondaryButton from '../Buttons/SecondaryButton';
 
-export default function LoginModal({ open, onClose, setUser }) {
+export default function LoginModal({ open, onClose, setUser, reload }) {
   const [value, setValue] = useState('');
   if (open) return null;
 
@@ -34,8 +34,10 @@ export default function LoginModal({ open, onClose, setUser }) {
             type='text'
             placeholder='Enter your name...'
           />
-          <PrimaryButton onClick={saveUser}>Enter</PrimaryButton>
-          <SecondaryButton screen='/' text='Go Back' />
+          <div style={{ display: 'flex' }}>
+            <PrimaryButton onClick={saveUser}>Enter</PrimaryButton>
+            <SecondaryButton onClick={reload()} screen='/' text='Go Back' />
+          </div>
         </form>
       </Modal>
     </>

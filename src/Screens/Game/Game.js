@@ -35,6 +35,7 @@ const Game = () => {
   const totalSelect = useSelector((state) => state.cardReducer.totalSelect);
   const score = useSelector((state) => state.cardReducer.point);
   const found = useSelector((state) => state.cardReducer.found);
+
   const handleClick = (name, id) => {
     const b = selected;
     if (isOpen) dispatch(select({ name: name, id }));
@@ -75,6 +76,7 @@ const Game = () => {
         open={isLogged}
         onClose={() => setIsLogged(true)}
         setUser={setUser}
+        reload={reloadGame}
       />
       {isFinish && (
         <ResultModal
@@ -109,7 +111,7 @@ const Game = () => {
                   className='test'
                   isOpen={!item.isOpen}
                   onClick={() =>
-                    (totalSelect < 2 && isOpen && id !== selectedId) || id === 0 // very weird, check later
+                    (totalSelect < 2 && isOpen && id !== selectedId) || id === 0
                       ? handleClick(item.name, id)
                       : ''
                   }

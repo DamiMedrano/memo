@@ -18,7 +18,11 @@ export default SecondaryButton;
 
 const ButtonLink = styled(Link)`
   text-decoration: none;
-  width: fit-content;
+  padding: 10px 20px;
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  margin: -10px -20px;
 `;
 
 const Button = styled.button`

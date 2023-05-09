@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 const PrimaryButton = ({ children, screen, text }) => {
   const ButtonElement = screen ? (
-    <ButtonLink to={screen}>
-      <Button>{text}</Button>
-    </ButtonLink>
+    <Button>
+      <ButtonLink to={screen}>{text}</ButtonLink>
+    </Button>
   ) : (
     <Button>{children}</Button>
   );
@@ -18,7 +18,12 @@ export default PrimaryButton;
 
 const ButtonLink = styled(Link)`
   text-decoration: none;
-  width: fit-content;
+  color: #fff;
+  padding: 10px 20px;
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  margin: -10px -20px;
 `;
 
 const Button = styled.button`
