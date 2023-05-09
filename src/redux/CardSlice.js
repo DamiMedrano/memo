@@ -5,7 +5,7 @@ import { changeOption } from './dropdownSlice';
 export const cardSlice = createSlice({
   name: 'cards',
   initialState: {
-    cards: [],
+    cards: cardListSelector({}), // default: Star Wars
     selected: '',
     selectedId: 0,
     totalSelect: 0,
@@ -22,6 +22,7 @@ export const cardSlice = createSlice({
       } else state.totalSelect = 2;
     },
     compare: (state, action) => {
+      if (state.cards.length === 0) return; // Validate not empty
       if (state.selected === action.payload.name) {
         state.cards[state.selectedId].isFind = true;
         state.cards[action.payload.id].isFind = true;
