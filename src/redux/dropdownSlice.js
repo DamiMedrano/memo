@@ -19,24 +19,20 @@ export const { changeOption } = dropdownSlice.actions;
 
 export const arrSelector = (state) => {
   if (!state || !state.dropdown || !state.dropdown.selectedOption) {
-    return gameOfThronesArr;
+    return starWarsArr;
   }
 
   if (state.dropdown.selectedOption === 'Star Wars') {
-    console.log('is starwars');
     return starWarsArr;
   } else if (state.dropdown.selectedOption === 'Game of Thrones') {
-    console.log('is got');
     return gameOfThronesArr;
   } else if (state.dropdown.selectedOption === 'Lord of the Rings') {
-    console.log('is lotr');
     return lordOfTheRingsArr;
   }
 };
 
 export const cardListSelector = (state) => {
   const arr = arrSelector(state);
-  console.log('arr', arr);
   const list = [];
 
   for (var i = 0; i < arr.length; i++) {
