@@ -119,8 +119,10 @@ export const ScoreInfo = styled.p`
   margin-top: 10px;
   margin-left: 25px;
   color: rgba(140, 140, 140);
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 900px) {
     margin: 20px 4px 0;
+  }
+  @media only screen and (max-width: 700px) {
     font-size: 14px;
   }
 `;
@@ -165,7 +167,16 @@ export const Reload = styled.button`
 
 export const Span = styled.span`
   transform: 'translateY(2px)';
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 600px) {
     display: none;
+  }
+`;
+
+export const ResponsiveContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+    align-items: flex-start;
   }
 `;

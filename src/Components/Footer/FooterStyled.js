@@ -34,12 +34,12 @@ export const FooterContainer = styled.div`
 `;
 
 export const Text = styled.a`
-  display: block;
+  width: fit-content;
   font-size: 1.4rem;
   margin-top: 16px;
   color: rgba(0, 0, 0, 0.4);
   text-decoration: none;
-  transition: 0.2s all;
+  transition: all 0.2s ease 0s;
   padding: 4px;
   &:hover {
     color: rgba(0, 0, 0, 0.8);

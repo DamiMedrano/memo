@@ -5,18 +5,20 @@ const Footer = () => {
   return (
     <Container>
       <FooterContainer>
-        <Link href='https://github.com/DamiMedrano/' target='_blank'>
-          <AiFillGithub className='github' />
-        </Link>
-        <Link
-          href='https://www.linkedin.com/in/damian-medrano/'
-          target='_blank'
-        >
-          <AiFillLinkedin className='linkedIn' />
-        </Link>
-        <Link href='https://github.com/DamiMedrano/memo' target='_blank'>
-          <AiFillCode className='code' />
-        </Link>
+        <div>
+          <Link href='https://github.com/DamiMedrano/' target='_blank'>
+            <AiFillGithub className='github' />
+          </Link>
+          <Link
+            href='https://www.linkedin.com/in/damian-medrano/'
+            target='_blank'
+          >
+            <AiFillLinkedin className='linkedIn' />
+          </Link>
+          <Link href='https://github.com/DamiMedrano/memo' target='_blank'>
+            <AiFillCode className='code' />
+          </Link>
+        </div>
         <Text href='mailto:damian.e.medrano@gmail.com'>
           by <br /> <span style={{ fontSize: '2rem' }}>Damian Medrano</span>
         </Text>

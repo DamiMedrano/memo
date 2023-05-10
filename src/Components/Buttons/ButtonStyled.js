@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: flex;
   * {
     text-align: center;
     min-width: 180px;
@@ -20,6 +21,5 @@ export const Container = styled.div`
   a {
     text-decoration: none;
     padding: 9px 0px;
-    display: block;
   }
 `;

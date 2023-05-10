@@ -21,6 +21,7 @@ import {
   Card,
   QuestionMarkCard,
   ImageCard,
+  ResponsiveContainer,
 } from './GameStyled';
 
 const Game = () => {
@@ -29,6 +30,7 @@ const Game = () => {
   const [user, setUser] = useState({});
   const [isFinish, setIsFinish] = useState(false);
   const [isFirst, setIsFirst] = useState(true);
+  const [turns, setTurns] = useState(0);
   const dispatch = useDispatch();
   const list = useSelector((state) => state.cardReducer.cards);
   const selected = useSelector((state) => state.cardReducer.selected);
@@ -39,6 +41,7 @@ const Game = () => {
 
   const handleClick = (name, id) => {
     const b = selected;
+    setTurns(turns + 1);
     if (isOpen) dispatch(select({ name: name, id }));
     if (b !== '') {
       setIsOpen(false);
@@ -50,14 +53,14 @@ const Game = () => {
   };
 
   const reloadGame = () => {
-    const storedUsername = localStorage.getItem('username');
-    if (storedUsername === null) {
+    if (turns > 0) {
       dispatch(closeAll());
       setIsOpen(false);
       setTimeout(() => {
         dispatch(reload());
         setIsOpen(true);
       }, 1000);
+      setTurns(0);
     }
   };
 
@@ -96,14 +99,14 @@ const Game = () => {
             </>
           )}
         </div>
-        <div style={{ display: 'flex' }}>
+        <ResponsiveContainer>
           <PrimaryButton screen='/' text='Go back' />
           {user.name ? (
             <SecondaryButton onClick={handleLogOut}>
               Not {user.name}? Log out
             </SecondaryButton>
           ) : null}
-        </div>
+        </ResponsiveContainer>
       </Header>
       <LoginModal
         open={!isLogged}
