@@ -53,7 +53,8 @@ const Game = () => {
   };
 
   const reloadGame = () => {
-    if (turns > 0) {
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername === null || turns > 0) {
       dispatch(closeAll());
       setIsOpen(false);
       setTimeout(() => {
