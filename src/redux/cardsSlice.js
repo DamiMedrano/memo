@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { cardListSelector, shuffle } from './dropdownSlice';
 import { changeOption } from './dropdownSlice';
 
-export const cardSlice = createSlice({
+export const cardsSlice = createSlice({
   name: 'cards',
   initialState: {
     cards: cardListSelector({}), // default: Star Wars
@@ -61,9 +61,9 @@ export const cardSlice = createSlice({
   },
 });
 
-export const { select, compare, reload, closeAll } = cardSlice.actions;
+export const { select, compare, reload, closeAll } = cardsSlice.actions;
 
-export default cardSlice.reducer;
+export default cardsSlice.reducer;
 
 export const changeOptionThunk = (option) => (dispatch) => {
   dispatch(changeOption(option));

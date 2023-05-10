@@ -50,12 +50,15 @@ const Game = () => {
   };
 
   const reloadGame = () => {
-    dispatch(closeAll());
-    setIsOpen(false);
-    setTimeout(() => {
-      dispatch(reload());
-      setIsOpen(true);
-    }, 1000);
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername === null) {
+      dispatch(closeAll());
+      setIsOpen(false);
+      setTimeout(() => {
+        dispatch(reload());
+        setIsOpen(true);
+      }, 1000);
+    }
   };
 
   const handleLogOut = () => {
