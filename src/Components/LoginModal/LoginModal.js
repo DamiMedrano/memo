@@ -7,7 +7,6 @@ import SecondaryButton from '../Buttons/SecondaryButton';
 
 export default function LoginModal({ open, onClose, setUser, reload }) {
   const [value, setValue] = useState('');
-  if (open) return null;
 
   const saveUser = (e) => {
     if (e) e.preventDefault();
@@ -20,7 +19,7 @@ export default function LoginModal({ open, onClose, setUser, reload }) {
     }
   };
 
-  return (
+  return open ? (
     <>
       <Overlay />
       <Modal>
@@ -41,5 +40,5 @@ export default function LoginModal({ open, onClose, setUser, reload }) {
         </form>
       </Modal>
     </>
-  );
+  ) : null;
 }

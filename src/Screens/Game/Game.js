@@ -3,6 +3,7 @@ import { FaQuestion } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { IoReloadCircleSharp } from 'react-icons/io5';
 import PrimaryButton from '../../Components/Buttons/PrimaryButton';
+import SecondaryButton from '../../Components/Buttons/SecondaryButton';
 import LoginModal from '../../Components/LoginModal/LoginModal';
 import ResultModal from '../../Components/ResultModal/ResultModal';
 import { closeAll, compare, reload, select } from '../../redux/cardSlice';
@@ -57,25 +58,57 @@ const Game = () => {
     }, 1000);
   };
 
+  const handleLogOut = () => {
+    localStorage.removeItem('username');
+    setUser({});
+    setIsLogged(false);
+  };
+
   useEffect(() => {
     if (found === 15) {
       setIsFinish(true);
     }
   }, [found]);
 
+  useEffect(() => {
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      setUser({ name: storedUsername });
+      setIsLogged(true);
+    }
+  }, []);
+
   return (
     <>
       <Header>
         <div>
-          {user.name ? 'Hi ' + user.name + ', l' : 'L'}et's play a{' '}
-          <span style={{ color: '#ba68c8' }}>Memory Game</span>
+          {user.name ? (
+            <>
+              Hi <span style={{ color: '#ba68c8' }}>{user.name}</span>, let's
+              play a <span style={{ color: '#ba68c8' }}>Memory Game</span>
+            </>
+          ) : (
+            <>
+              Ready for a <span style={{ color: '#ba68c8' }}>Memory Game?</span>
+            </>
+          )}
         </div>
-        <PrimaryButton screen='/' text='Go back' />
+        <div style={{ display: 'flex' }}>
+          <PrimaryButton screen='/' text='Go back' />
+          {user.name ? (
+            <SecondaryButton onClick={handleLogOut}>
+              Not {user.name}? Log out
+            </SecondaryButton>
+          ) : null}
+        </div>
       </Header>
       <LoginModal
-        open={isLogged}
+        open={!isLogged}
         onClose={() => setIsLogged(true)}
-        setUser={setUser}
+        setUser={(user) => {
+          localStorage.setItem('username', user.name);
+          setUser(user);
+        }}
         reload={reloadGame}
       />
       {isFinish && (

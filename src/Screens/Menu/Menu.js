@@ -7,6 +7,7 @@ import { changeOption } from '../../redux/dropdownSlice';
 import { Container, PartOne, PartTwo, Title } from './MenuStyled';
 
 const Menu = () => {
+  const storedUsername = localStorage.getItem('username');
   const selectedOption = useSelector(
     (state) => state.dropdownReducer.selectedOption
   );
@@ -24,7 +25,10 @@ const Menu = () => {
         <Title>
           <PartOne>Memory</PartOne> <PartTwo>Game</PartTwo>
         </Title>
-        <PrimaryButton screen='/Game' text='PLAY' />
+        <PrimaryButton
+          screen='/Game'
+          text={storedUsername ? 'Continue game' : 'PLAY'}
+        />
         <SecondaryButton screen='/Leaderboard' text='Leaderboard' />
         <DropdownMenu
           options={options}
