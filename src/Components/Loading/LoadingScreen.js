@@ -1,10 +1,11 @@
 import React from 'react';
-import { Container } from './LoadingScreenStyled';
+import { Container, AiOutlineLoadingStyled } from './LoadingScreenStyled';
 
 const LoadingScreen = () => {
   return (
     <Container>
-      <h1 style={{ color: '#202020', textAlign: 'center' }}>Loading...</h1>
+      <h1 style={{ color: '#202020', textAlign: 'center' }}>loading</h1>
+      <AiOutlineLoadingStyled icon='fa-solid fa-spinner' />
     </Container>
   );
 };
