@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Container } from './ButtonStyled';
 
-const PrimaryButton = ({ children, screen, text }) => {
+const PrimaryButton = ({ children, screen, text, onClick }) => {
   const ButtonElement = (
     <Container>
       {screen ? (
         <ButtonLink to={screen}>{text}</ButtonLink>
       ) : (
-        <Button>{children}</Button>
+        <Button onClick={onClick}>{children}</Button>
       )}
     </Container>
   );

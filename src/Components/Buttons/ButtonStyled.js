@@ -8,14 +8,14 @@ export const Container = styled.div`
     font-size: 18px;
     color: #fff;
     border-radius: 4px;
-    transition: 0.2s all
-    &:hover {
-      cursor: pointer;
-    }
+    transition: 0.2s all;
   }
   button {
     padding: 10px 20px;
     border: none;
+    &:hover {
+      cursor: pointer;
+    }
   }
   a {
     text-decoration: none;
@@ -23,6 +23,3 @@ export const Container = styled.div`
     display: block;
   }
 `;
-
-// width: 100%;
-//   display: block;

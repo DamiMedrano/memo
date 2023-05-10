@@ -120,7 +120,7 @@ export const ScoreInfo = styled.p`
   margin-left: 25px;
   color: rgba(140, 140, 140);
   @media only screen and (max-width: 700px) {
-    margin-left: 4px;
+    margin: 20px 4px 0;
     font-size: 14px;
   }
 `;
