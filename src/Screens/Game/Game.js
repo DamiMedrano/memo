@@ -6,7 +6,7 @@ import PrimaryButton from '../../Components/Buttons/PrimaryButton';
 import SecondaryButton from '../../Components/Buttons/SecondaryButton';
 import LoginModal from '../../Components/LoginModal/LoginModal';
 import ResultModal from '../../Components/ResultModal/ResultModal';
-import { closeAll, compare, reload, select } from '../../redux/cardSlice';
+import { closeAll, compare, reload, select } from '../../redux/cardsSlice';
 import {
   Container,
   Header,
