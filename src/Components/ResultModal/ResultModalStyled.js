@@ -16,7 +16,6 @@ export const LeadershipSection = styled.div`
 export const LeadershipHeader = styled.h4`
   font-size: 22px;
   display: block;
-
   padding: 10px;
   margin: 0;
   margin-bottom: 20px;

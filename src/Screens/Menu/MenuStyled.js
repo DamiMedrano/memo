@@ -5,7 +5,6 @@ const slideInLeft = keyframes`
     transform: translateX(-400px) translateY(90px);
     opacity: 0;
   }
-
   100% {
     transform: translateX(0) translateY(0);
     opacity: 1;
@@ -16,7 +15,6 @@ const slideInRight = keyframes`
   from {
     transform: translateX(400px) translateY(-90px);
   }
-
   to {
     transform: translateX(0) translateY(0);
   }

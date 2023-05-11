@@ -28,8 +28,6 @@ export const Container = styled.div`
   bottom: 0;
   @media only screen and (max-height: 1100px) {
     position: relative;
-  }
-  @media only screen and (max-width: 1100px) {
     padding: 4px 0px 40px;
   }
   @media only screen and (max-width: 800px) {
