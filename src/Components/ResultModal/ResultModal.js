@@ -11,7 +11,7 @@ import {
   Score,
 } from './ResultModalStyled';
 
-function compare(a, b) {
+const compare = (a, b) => {
   if (a.score < b.score) {
     return 1;
   }
@@ -19,7 +19,7 @@ function compare(a, b) {
     return -1;
   }
   return 0;
-}
+};
 
 const ResultModal = ({ score, onClose, user, reload, isFirst }) => {
   const [leadership, setLeadership] = useState([]);

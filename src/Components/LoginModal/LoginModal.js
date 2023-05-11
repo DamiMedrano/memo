@@ -1,11 +1,11 @@
-import { nanoid } from 'nanoid';
 import React from 'react';
+import { nanoid } from 'nanoid';
 import { useState } from 'react';
 import { Header, Text, Input, Modal, Overlay } from './LoginModalStyled';
 import PrimaryButton from '../Buttons/PrimaryButton';
 import SecondaryButton from '../Buttons/SecondaryButton';
 
-export default function LoginModal({ open, onClose, setUser, reload }) {
+const LoginModal = ({ open, onClose, setUser, reload }) => {
   const [value, setValue] = useState('');
 
   const saveUser = (e) => {
@@ -18,7 +18,6 @@ export default function LoginModal({ open, onClose, setUser, reload }) {
       alert('Name cannot be empty.');
     }
   };
-
   return open ? (
     <>
       <Overlay />
@@ -28,7 +27,7 @@ export default function LoginModal({ open, onClose, setUser, reload }) {
         <form onSubmit={saveUser}>
           <Input
             value={value}
-            maxLength='15'
+            maxLength='14'
             onChange={(e) => setValue(e.target.value)}
             type='text'
             placeholder='Enter your name...'
@@ -41,4 +40,6 @@ export default function LoginModal({ open, onClose, setUser, reload }) {
       </Modal>
     </>
   ) : null;
-}
+};
+
+export default LoginModal;

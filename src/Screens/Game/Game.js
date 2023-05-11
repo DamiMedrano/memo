@@ -41,7 +41,6 @@ const Game = () => {
 
   const handleClick = (name, id) => {
     const b = selected;
-    setTurns(turns + 1);
     if (isOpen) dispatch(select({ name: name, id }));
     if (b !== '') {
       setIsOpen(false);
@@ -49,12 +48,13 @@ const Game = () => {
         dispatch(compare({ name: name, id }));
         setIsOpen(true);
       }, 1000);
+      setTurns(turns + 1);
     }
   };
 
   const reloadGame = () => {
     const storedUsername = localStorage.getItem('username');
-    if (storedUsername === null || turns > 0) {
+    if (storedUsername === null || turns !== 0) {
       dispatch(closeAll());
       setIsOpen(false);
       setTimeout(() => {

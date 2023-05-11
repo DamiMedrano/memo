@@ -10,7 +10,7 @@ import PrimaryButton from '../Components/Buttons/PrimaryButton';
 import LoadingScreen from '../Components/Loading/LoadingScreen';
 import styled from 'styled-components';
 
-function compare(a, b) {
+const compare = (a, b) => {
   if (a.score < b.score) {
     return 1;
   }
@@ -18,7 +18,7 @@ function compare(a, b) {
     return -1;
   }
   return 0;
-}
+};
 
 const ResultModal = () => {
   const [leadership, setLeadership] = useState([]);
@@ -46,7 +46,7 @@ const ResultModal = () => {
       <Container>
         {isLoaded ? (
           <>
-            <PrimaryButton screen='/' text='GoBack' />
+            <PrimaryButton screen='/' text='Go back' />
             <LeadershipSection>
               <LeadershipHeader>Leadership</LeadershipHeader>
               <Profile

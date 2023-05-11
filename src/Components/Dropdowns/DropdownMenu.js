@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-function DropdownMenu(props) {
+const DropdownMenu = (props) => {
   const [selectedOption, setSelectedOption] = useState(props.options[0]);
 
-  function handleOptionChange(event) {
+  const handleOptionChange = (event) => {
     const newOption = event.target.value;
     setSelectedOption(newOption);
     props.onChange(newOption);
-  }
+  };
 
   return (
     <DropdownContainer>
@@ -24,7 +24,7 @@ function DropdownMenu(props) {
       </Label>
     </DropdownContainer>
   );
-}
+};
 
 export default DropdownMenu;
 

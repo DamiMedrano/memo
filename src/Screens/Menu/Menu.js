@@ -13,9 +13,9 @@ const Menu = () => {
   );
   const dispatch = useDispatch();
 
-  function handleOptionChange(newOption) {
+  const handleOptionChange = (newOption) => {
     dispatch(changeOption(newOption));
-  }
+  };
 
   const options = ['Star Wars', 'Game of Thrones', 'Lord of the Rings'];
 
